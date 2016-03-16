@@ -26,14 +26,14 @@ int NumberOfHops =30;
 int main(int argc, char** argv)
 {
     //Validate(argc,argv[1]);
-    char* ip ="8.8.8.8";
+    char* ip ="139.130.4.5";
     int socfd = CreateSocket();
-    for(int i=1;i<=NumberOfHops;i++)
+    for(int i=1; i<=NumberOfHops; i++)
     {
         Send(i,socfd,pid,ip);
-        printf("TTL %d\n",i);
-        Recieve(socfd,i);
+        if(!Recieve(socfd,i))
+            break;
     }
 
-        return 0;
+    return 0;
 }
