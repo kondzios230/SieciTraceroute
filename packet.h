@@ -1,5 +1,6 @@
 #include <arpa/inet.h>
 #include <unistd.h>
+#include <netinet/ip_icmp.h>
 
 icmphdr CreateIcmpHeader(int orderNumber,int pid);
 sockaddr_in CreateSocketConnection(char* ip);

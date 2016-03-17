@@ -10,7 +10,7 @@
 #include "socket.h"
 #include "helpers.h"
 #include "packet.h"
-
+#include <string.h>
 #include <errno.h>
 #include <sys/time.h>
 #include <sys/types.h>
@@ -25,8 +25,8 @@ int NumberOfHops =30;
 
 int main(int argc, char** argv)
 {
-    //Validate(argc,argv[1]);
-    char* ip ="139.130.4.5";
+    char* ip = argv[1];
+    Validate(argc,argv[1]);
     int socfd = CreateSocket();
     for(int i=1; i<=NumberOfHops; i++)
     {
